@@ -46,3 +46,14 @@ function chgImage(){
 
 setInterval(chgImage, 4000);
 
+document.getElementById('myImages').addEventListener('click', 
+function(){
+    if (counter < imageAr.length){
+        document.getElementById('myImages').setAttribute('src', imageAr[counter]);
+        counter++;
+    }
+    else{
+        counter = 0;
+        document.getElementById('myImages').setAttribute('src', imageAr[counter]);
+    }
+})
