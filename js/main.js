@@ -27,10 +27,22 @@ document.querySelector(".reset").addEventListener('click', function(ev){
 let imageAr = ['images/view1.jpg', 'images/view2.jpg', 'images/view3.jpg',
 'images/view4.jpg',  'images/view5.jpg', 'images/view6.jpg'];
 
+console.dir(imageAr);
+
+document.getElementById('myImages').setAttribute('src', imageAr[2]);
+
+let counter = 0;
+
 function chgImage(){
+    if (counter < imageAr.length){
+        document.getElementById('myImages').setAttribute('src', imageAr[counter]);
+        counter++;
+    }
+    else{
+        counter = 0;
+    }    
     console.info('Called');
-    for(let i=0; i<7; i++)
-        {document.getElementById('myImages').setAttribute('src', imageAr[i])}
 }
 
 setInterval(chgImage, 4000);
+
